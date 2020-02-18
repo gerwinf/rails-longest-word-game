@@ -1,0 +1,15 @@
+<h1>Results</h1>
+<!-- <p>Find me in app/views/games/score.html.erb</p>
+ -->
+<%= params[:word]%>
+
+<% if @included %>
+  <% if @english_word %>
+    <p><%="Congratulations! #{@word.upcase} is a valid word" %></p>
+  <% else %>
+    <p><%= "Sorry, but #{@word.upcase} is not an english word" %></p>
+  <% end %>
+<% else %>
+  <p><%= "Sorry, but #{@word.upcase} is not included in #{@letters.split('').join(' ')}" %></p>
+<% end %>
+<a href="new">Play Again</a>
